@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "2.2",
+  "description": "aws:runShellScript",
+  "parameters": {
+    "commands": {
+      "type": "String",
+      "description": "(Required) The commands to run or the path to an existing script on the instance.",
+      "default": "echo Hello World"
+    }
+  },
+  "mainSteps": [
+    {
+      "action": "aws:runShellScript",
+      "name": "runShellScript",
+      "inputs": {
+        "timeoutSeconds": "20",
+        "runCommand": [
+          "ls -lstrh"
+        ]
+      }
+    }
+  ]
+}
+:wq!
+
